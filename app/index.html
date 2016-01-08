@@ -1,13 +1,184 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Hello, World</title>
+  <title>Etsy Redo</title>
   <link rel="stylesheet" type="text/css" href="css/normalize.css">
   <link rel="stylesheet" type="text/css" href="css/main.css">
 </head>
 <body>
-  <h1>Hello, <i class="fa fa-globe"></i></h1>
+  <div class="container">
+
+    <header>
+    <!-- Left Header -->
+      <div class="leftSide">
+        <div class="logo">
+          <img  class="etsimg" src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcROOECw_UWhMA3ZPsl0WWcYc_h2ii3IvfDB2qer2h_0ti8JShtvf-8p6g">
+        </div>
+        <div class="leftSideRight">
+          <span class="headHead">
+            <input class="searchInp" type="text" placeholder="Search for items or shops"/>
+          </span>
+          <button>Search</button>
+          <a class="bro" href="">
+            <span class="browse">Browse &#9662;</span>
+          </a>
+        </div>
+      </div>
+    <!-- Right Header -->
+      <div class="rightSide">
+        <div class="regRight">
+          <span class="reg">Register</span>
+          <span class="signIn">Sign In</span>
+        </div>
+        <div class="cartDiv">
+          <span class="cartWords">Cart</span>
+          <div class="cartpic">
+            <img class="cart" src="https://github.com/tiy-atl-js-sept-2015/Assignments/blob/master/Assignment-11*/assets/cart.png?raw=true">
+          </div>
+        </div>
+      </div>
+    </header>
+    <div class="nav-menu">
+      <nav>
+        <ul>
+          <li><a href="#">Clothing & Accessories</a></li>
+          <li><a href="#">Jewelry</a></li>
+          <li><a href="#">Craft Supplies & Tools</a></li>
+          <li><a href="#">Weddings</a></li>
+          <li><a href="#">Entertainment</a></li>
+          <li><a href="#">Home & Living</a></li>
+          <li><a href="#">Kids & Baby</a></li>
+          <li><a href="#">Vintage</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="show-results">
+      <span class="show">Show Results For:</span>
+      <span class="all-cats"><a href="https://www.etsy.com/search?q=Pokemon">All Categories</a> "Pokemon" (33.352 Results)</span>
+      <span class="sort">Sort By: Relevancy</span>
+    </div>
+
+    <aside>
+
+      <div class="categories">
+        <span>All Categories</span>
+          <ul>
+          <li><a href="#">Jewelry</a></li>
+          <li><a href="#">Accessories</a></li>
+          <li><a href="#">Clothing</a></li>
+          <li><a href="#">Home & Living</a></li>
+          <li><a href="#">Art & Collectibles</a></li>
+          <li><a href="#">Bags & Purses</a></li>
+          <li><a href="#">Paper & Party Supplies</a></li>
+          <li><a href="#">Bath & Beauty</a></li>
+          <li><a href="#">Craft Supplies & Tools</a></li>
+          <li><a href="#">Books, Movies, & Music</a></li>
+          <li><a href="#">Toys & Games</a></li>
+          <li><a href="#">Electronics & Accessories</a></li>
+          <li><a href="#">Weddings</a></li>
+          <li><a href="#">Pet Supplies</a></li>
+          <li><a href="#">Shoes</a></li>
+        </ul>
+      </div>
+
+      <span class="refine-search">Refine your search</span>
+
+      <div class="refine-results">
+        <section class="item-type">
+          Item Type
+          <ul>
+            <li><input type="radio" name="items" value=
+            "checked">All Items</li>
+            <li><input type="radio" name="items">Vintage</li>
+            <li><input type="radio" name="items">Handmade</li>
+          </ul>
+        </section>
+        <hr>
+        <section class="price">
+          <span>Price</span>
+          <br>
+          <div class="low-price">
+          $
+          <input type="text" placeholder="Low">
+          </div> 
+          <span>to</span>
+          <div class="high-price">
+          $ 
+          <input type="text" placeholder="High">
+          </div>
+          <button></button>
+        </section>
+        <hr>
+        <section class="color-filter">
+          Filter by Color
+          <ul>
+            <li class="red"></li>
+            <li class="orange"></li>
+            <li class="yellow"></li>
+            <li class="green"></li>
+            <li class="blue"></li>
+            <li class="purple"></li>
+            <li class="black"></li>
+            <li class="white"></li>
+          </ul>
+        </section>
+        <hr>
+        <section class="order-opts">
+          Ordering Options
+          <ul>
+            <li><input type="checkbox">Accepts Etsy Gift Cards</li>
+            <li><input type="checkbox">Customizable</li>
+          </ul>
+        </section>
+        <hr>
+        <section class="location">
+          Shop Location
+          <ul>
+            <li><input type="radio" name="location" value="checked">Anywhere</li>
+            <li><input type="radio" name="location">United States</li>
+            <li><span><a href="#">Choose a Custom Location</a></span></li>
+          </ul>
+        </section>
+        <hr>
+        <section class="ship-to">
+          Ship to
+          <br>
+          <select>
+            <option>Mozambique</option>
+            <option>Mexico City</option>
+            <option>Madrid</option>
+            <option>Vancouver</option>
+            <option>Havana</option>
+            <option>Cape Town</option>
+            <option>Paris</option>
+            <option>Milan</option>
+            <option>Tokyo</option>
+            <option>Hong Kong</option>
+            <option>Melbourne</option>
+            <option>London</option>
+            <option>Buenos Aires</option>
+          </select>
+        </section>
+      </div>
+    </aside>
+
+    <div class="results-area">
+      <script type="text/template" id="itemTemplate">
+        <div class="item-display">
+          <a href="<%= url %>"><img src="<%= Images[0].url_170x135 %>"></a>
+          <div class="title"><a href="<%= url %>"><%= title %></a></div>
+          <div class="seller"><a href="<%= Shop.url %>"><%= Shop.shop_name %></a></div>
+          <div class="the-price"><span>$</span><%= price %></div>
+        </div>
+      </script>
+    </div>
+
+
+  </div>
+
   
+  // <script src="js/etsy.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>
