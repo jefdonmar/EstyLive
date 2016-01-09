@@ -17,6 +17,8 @@ var _moment2 = _interopRequireDefault(_moment);
 
 (function () {
 
+  var templateString = (0, _jquery2['default'])('#itemTemplate').html();
+  var renderTemplate = _underscore2['default'].template(templateString);
   var etsyURL = 'https://api.etsy.com/v2/listings/active.js?api_key=h9oq2yf3twf4ziejn10b717i&keywords=whiskey&includes=Images,Shop';
 
   _jquery2['default'].ajax({
@@ -24,18 +26,10 @@ var _moment2 = _interopRequireDefault(_moment);
     dataType: 'jsonp',
     method: 'get'
   }).then(function (response) {
-    console.log(response);
-  });
-
-  var templateString = (0, _jquery2['default'])('#itemTemplate').text();
-
-  var renderTemplate = _underscore2['default'].template(templateString);
-
-  // bring up items I want
-
-  _underscore2['default'].each(etsy.results, function (item) {
-    var itemInfo = renderTemplate(item);
-    (0, _jquery2['default'])('.results-area').append(itemInfo);
+    _underscore2['default'].each(response.results, function (item) {
+      var itemInfo = renderTemplate(item);
+      (0, _jquery2['default'])('.results-area').append(itemInfo);
+    });
   });
 })();
 

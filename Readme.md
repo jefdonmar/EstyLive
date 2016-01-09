@@ -1,6 +1,9 @@
-## Welcome to My Project
+## Welcome to Etsy Page Live Data Redo
+In this repository we were charged do a redo of an Etsy search page using live data were I got to practice using AJAZ request. 
 
-> I am your Readme.md file, you should probably update me.
+Here is the link to my deployment: defiant-bridge.surge.sh
+
+Hope you Enjoy!
 
 
 ## Usage
